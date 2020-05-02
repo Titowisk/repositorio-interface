@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My CRUD in NodeJS</title>
+  <link rel="stylesheet" type="text/css" href="css/productList.css">
+</head>
+<body>
+    <div class="product-list">
+        <% data.forEach(function(product) { %>
+        <article id=<%= product._id %> >
+            <strong><%= product.title %></strong>
+            <p><%= product.description %></p>
+            <a href=<%= product.url %>><%= product.title %></a>
+        </article>
+        <% }); %> 
+    </div>
+</body>
+</html>
