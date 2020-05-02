@@ -52,3 +52,24 @@ app.get('/productList', function (req, res) {
             // always executed
         });
 });
+
+app.get('/productDetail/:id', function (req, res) {
+    axios
+        .get(`http://localhost:3001/api/products/${req.params.id}`)
+        .then(function (response) {
+            // handle success
+            console.log(response);
+            res.render('productDetail.ejs', {product: response.data});
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .finally(function () {
+            // always executed
+        });
+});
+
+
+// https://stackoverflow.com/questions/18629327/adding-css-file-to-ejs
+// https://stackoverflow.com/questions/5710358/how-to-retrieve-post-query-parameters
