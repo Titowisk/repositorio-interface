@@ -31,11 +31,11 @@ app.post('/createProduct', function (req, res) {
             description: req.body.description,
             url: req.body.url,
             watch: req.body.watch,
-            start: req.body.start,
+            star: req.body.star,
             fork: req.body.fork,
             usedby: req.body.usedby,
             issues: req.body.issues,
-            pullRequest: req.body.pullRequest,
+            pullRequests: req.body.pullRequests,
         })
         .then(function (response) {
             console.log(response.data);
