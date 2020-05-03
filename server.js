@@ -38,7 +38,6 @@ app.post('/createProduct', function (req, res) {
             pullRequests: req.body.pullRequests,
         })
         .then(function (response) {
-            console.log(response.data);
             res.redirect('/productList');
         })
         .catch(function (error) {
@@ -110,7 +109,6 @@ app.get('/productEdit/:id', function (req, res) {
 
 app.post('/update/:id', function (req, res) {
     var updateUri = `http://localhost:3001/api/products/${req.params.id}`
-    console.log(req.body)
     axios
         .put(updateUri, {
             title: req.body.title,

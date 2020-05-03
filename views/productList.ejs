@@ -41,7 +41,7 @@
     </nav>
     <div class="container">
         <% data.forEach(function(product) { %>
-        <div class="card" style="width: 50rem;">
+        <div class="card" style="width: 50rem; margin-top: 2rem;">
             <div class="card-header">
                 <h5 class="card-title"><%= product.title %></h5>
             </div>
@@ -55,6 +55,8 @@
                     <p><strong>Issues:</strong> <%= product.issues %></p>
                     <p><strong>Pul Request:</strong> <%= product.pullRequests %></p>
                 </div>
+                <p class="card-text"><strong>Data de criação:</strong> <%= product.createdAt %></p>
+                
             </div>
             <div class="card-footer">
                 <a href="<%= product.url %>" class="card-link">Link</a>
