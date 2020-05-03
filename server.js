@@ -70,6 +70,41 @@ app.get('/productDetail/:id', function (req, res) {
         });
 });
 
+app.get('/productEdit/:id', function (req, res) {
+    axios
+        .get(`http://localhost:3001/api/products/${req.params.id}`)
+        .then(function (response) {
+            // handle success
+            res.render('productEdit.ejs', {product: response.data});
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .finally(function () {
+            // always executed
+        });
+});
+
+
+app.post('/update/:id', function (req, res) {
+    var updateUri = `http://localhost:3001/api/products/${req.params.id}`
+    console.log(req.body)
+    axios
+        .put(updateUri, {
+            title: req.body.title,
+            description: req.body.description,
+            url: req.body.url,
+        })
+        .then(function (response) {
+            // console.log(response.data);
+            res.redirect('/');
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+});
+
 
 // https://stackoverflow.com/questions/18629327/adding-css-file-to-ejs
 // https://stackoverflow.com/questions/5710358/how-to-retrieve-post-query-parameters
