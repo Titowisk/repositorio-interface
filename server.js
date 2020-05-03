@@ -15,6 +15,10 @@ app.listen(3000, function () {
 
 app.set('view engine', 'ejs');
 
+/** ======================================
+ * CREATE
+ * =======================================
+ */
 app.get('/', function (req, res) {
     res.render('index.ejs');
 });
@@ -26,16 +30,26 @@ app.post('/createProduct', function (req, res) {
             title: req.body.title,
             description: req.body.description,
             url: req.body.url,
+            watch: req.body.watch,
+            start: req.body.start,
+            fork: req.body.fork,
+            usedby: req.body.usedby,
+            issues: req.body.issues,
+            pullRequest: req.body.pullRequest,
         })
         .then(function (response) {
             console.log(response.data);
-            res.redirect('/');
+            res.redirect('/productList');
         })
         .catch(function (error) {
             console.log(error);
         });
 });
 
+/** ======================================
+ * Get All
+ * =======================================
+ */
 app.get('/productList', function (req, res) {
     axios
         .get('http://localhost:3001/api/products')
@@ -52,6 +66,11 @@ app.get('/productList', function (req, res) {
         });
 });
 
+
+/** ======================================
+ * Get by Id
+ * =======================================
+ */
 app.get('/productDetail/:id', function (req, res) {
     axios
         .get(`http://localhost:3001/api/products/${req.params.id}`)
@@ -68,6 +87,10 @@ app.get('/productDetail/:id', function (req, res) {
         });
 });
 
+/** ======================================
+ * Update
+ * =======================================
+ */
 app.get('/productEdit/:id', function (req, res) {
     axios
         .get(`http://localhost:3001/api/products/${req.params.id}`)
@@ -102,6 +125,10 @@ app.post('/update/:id', function (req, res) {
         });
 });
 
+/** ======================================
+ * DELETE
+ * =======================================
+ */
 app.get('/productRemove/:id', function (req, res) {
     axios
         .delete(`http://localhost:3001/api/products/${req.params.id}`)

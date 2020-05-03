@@ -46,19 +46,18 @@
                         type="text"
                         class="form-control"
                         id="title"
-                        placeholder="Example input"
+                        placeholder="nome do repositório"
                         name="title"
                     />
                 </div>
                 <div class="form-group">
                     <label for="description">Descrição</label>
-                    <input
+                    <textarea
                         type="text"
                         class="form-control"
                         id="description"
                         name="description"
-                        placeholder="Another input"
-                    />
+                        placeholder="descrição do repositório"></textarea> 
                 </div>
                 <div class="form-group">
                     <label for="url">Url</label>
@@ -67,9 +66,86 @@
                         class="form-control"
                         id="url"
                         name="url"
-                        placeholder="Another input"
+                        placeholder="link do repositório no github"
                     />
                 </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="watch">Watch:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="watch"
+                                name="watch"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="star">Star:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="star"
+                                name="star"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="fork">Fork:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="fork"
+                                name="fork"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="usedby">Used by:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="usedby"
+                                name="usedby"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="issues">Issues:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="issues"
+                                name="issues"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="pullRequests">Pull Requests:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="pullRequests"
+                                name="pullRequests"
+                                min="0"
+                            />
+                        </div>
+                    </div>
+                </div>
+                
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
