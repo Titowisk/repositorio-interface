@@ -42,14 +42,27 @@
     <div class="container">
         <% data.forEach(function(product) { %>
         <div class="card" style="width: 50rem;">
-            <div class="card-body">
+            <div class="card-header">
                 <h5 class="card-title"><%= product.title %></h5>
+            </div>
+            <div class="card-body">
                 <p class="card-text"><%= product.description %></p>
+                <div class="d-flex justify-content-between">
+                    <p><strong>Watch:</strong> <%= product.watch %></p>
+                    <p><strong>Star:</strong> <%= product.star %></p>
+                    <p><strong>Fork:</strong> <%= product.fork %></p>
+                    <p><strong>Used By:</strong> <%= product.usedby %></p>
+                    <p><strong>Issues:</strong> <%= product.issues %></p>
+                    <p><strong>Pul Request:</strong> <%= product.pullRequests %></p>
+                </div>
+            </div>
+            <div class="card-footer">
                 <a href="<%= product.url %>" class="card-link">Link</a>
                 <a href="/productEdit/<%= product._id %>" class="btn btn-secondary">Editar</a>
                 <a href="/productRemove/<%= product._id %>" class="btn btn-danger">Remover</a>
+                
             </div>
-            </div>
+        </div>
         <% }); %> 
     </div>
     <script
