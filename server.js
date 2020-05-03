@@ -41,7 +41,6 @@ app.get('/productList', function (req, res) {
         .get('http://localhost:3001/api/products')
         .then(function (response) {
             // handle success
-            console.log(response);
             res.render('productList.ejs', {data: response.data.docs});
         })
         .catch(function (error) {
@@ -58,7 +57,6 @@ app.get('/productDetail/:id', function (req, res) {
         .get(`http://localhost:3001/api/products/${req.params.id}`)
         .then(function (response) {
             // handle success
-            console.log(response);
             res.render('productDetail.ejs', {product: response.data});
         })
         .catch(function (error) {
@@ -97,7 +95,6 @@ app.post('/update/:id', function (req, res) {
             url: req.body.url,
         })
         .then(function (response) {
-            // console.log(response.data);
             res.redirect('/');
         })
         .catch(function (error) {
