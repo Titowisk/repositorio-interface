@@ -105,6 +105,23 @@ app.post('/update/:id', function (req, res) {
         });
 });
 
+app.get('/productRemove/:id', function (req, res) {
+    axios
+        .delete(`http://localhost:3001/api/products/${req.params.id}`)
+        .then(function (response) {
+            // handle success
+            res.redirect('/productList');
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .finally(function () {
+            // always executed
+        });
+});
 
 // https://stackoverflow.com/questions/18629327/adding-css-file-to-ejs
 // https://stackoverflow.com/questions/5710358/how-to-retrieve-post-query-parameters
+// https://stackoverflow.com/questions/9838216/using-ejs-how-do-i-insert-a-value-if-it-exists
+
