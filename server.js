@@ -116,9 +116,15 @@ app.post('/update/:id', function (req, res) {
             title: req.body.title,
             description: req.body.description,
             url: req.body.url,
+            watch: req.body.watch,
+            star: req.body.star,
+            fork: req.body.fork,
+            usedby: req.body.usedby,
+            issues: req.body.issues,
+            pullRequests: req.body.pullRequests,
         })
         .then(function (response) {
-            res.redirect('/');
+            res.redirect('/productList');
         })
         .catch(function (error) {
             console.log(error);

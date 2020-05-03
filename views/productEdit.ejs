@@ -24,16 +24,16 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+    
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#"
-                            >Home <span class="sr-only">(current)</span></a
+                        <a class="nav-link" href="/"
+                            >Criar <span class="sr-only">(current)</span></a
                         >
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Criar Produto</a>
+                        <a class="nav-link" href="/productList">Produtos</a>
                     </li>
                 </ul>
             </div>
@@ -46,21 +46,19 @@
                         type="text"
                         class="form-control"
                         id="title"
-                        placeholder="Example input"
+                        placeholder="nome do repositório"
                         name="title"
                         value="<%= product.title %>"
                     />
                 </div>
                 <div class="form-group">
                     <label for="description">Descrição</label>
-                    <input
+                    <textarea
                         type="text"
                         class="form-control"
                         id="description"
                         name="description"
-                        placeholder="Another input"
-                        value="<%= product.description %>"
-                    />
+                        placeholder="descrição do repositório"><%= product.description %></textarea> 
                 </div>
                 <div class="form-group">
                     <label for="url">Url</label>
@@ -69,10 +67,93 @@
                         class="form-control"
                         id="url"
                         name="url"
-                        placeholder="Another input"
+                        placeholder="link do repositório no github"
                         value="<%= product.url %>"
                     />
                 </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="watch">Watch:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="watch"
+                                name="watch"
+                                min="0"
+                                value="<%= product.watch %>"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="star">Star:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="star"
+                                name="star"
+                                min="0"
+                                value="<%= product.star %>"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="fork">Fork:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="fork"
+                                name="fork"
+                                min="0"
+                                value="<%= product.fork %>"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="usedby">Used by:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="usedby"
+                                name="usedby"
+                                min="0"
+                                value="<%= product.usedby %>"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="issues">Issues:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="issues"
+                                name="issues"
+                                min="0"
+                                value="<%= product.issues %>"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="pullRequests">Pull Requests:</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="pullRequests"
+                                name="pullRequests"
+                                min="0"
+                                value="<%= product.pullRequests %>"
+                            />
+                        </div>
+                    </div>
+                </div>
+                
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
